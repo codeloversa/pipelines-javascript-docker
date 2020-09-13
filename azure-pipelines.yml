@@ -16,7 +16,7 @@ variables:
   dockerfilePath: '$(Build.SourcesDirectory)/app/Dockerfile'
   tag: '$(Build.BuildId)'
   azureSubscription: 'dcj-internal-subscription'
-  appName: 'my_app'
+  appName: 'TestForDoc'
   
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -43,5 +43,5 @@ stages:
     - task: AzureFunctionAppContainer@1 # Add this at the end of your file
       inputs:
         azureSubscription: 'dcj-internal-subscription'
-        appName: 'my_app'
+        appName: 'TestForDoc'
         imageName: $(containerRegistry)/$(imageRepository):$(tag)
