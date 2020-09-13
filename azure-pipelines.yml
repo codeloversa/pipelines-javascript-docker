@@ -42,6 +42,6 @@ stages:
 
     - task: AzureFunctionAppContainer@1 # Add this at the end of your file
       inputs:
-        azureSubscription: 'dcj-internal-subscription'
-        appName: 'TestForDoc'
+        azureSubscription: $(azureSubscription)
+        appName: $(appName)
         imageName: $(containerRegistry)/$(imageRepository):$(tag)
